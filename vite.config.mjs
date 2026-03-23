@@ -1,0 +1,18 @@
+﻿import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
+
+export default defineConfig({
+  base: '/portfolio/',
+  plugins: [react()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        about: resolve(__dirname, 'about-me.html'),
+        portfolio: resolve(__dirname, 'portfolio.html'),
+        contact: resolve(__dirname, 'contact.html')
+      }
+    }
+  }
+});
